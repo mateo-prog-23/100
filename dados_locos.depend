@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1737077850 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
+	<iostream>
+	"funciones.h"
+
+1737077872 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
+
+1737077994 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
+	"funciones.h"
+	<iostream>
+
