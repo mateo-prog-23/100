@@ -1,0 +1,6 @@
+#ifndef MODOUNJUGADOR_H_INCLUDED
+#define MODOUNJUGADOR_H_INCLUDED
+
+void modoUnJugador();
+
+#endif // MODOUNJUGADOR_H_INCLUDED

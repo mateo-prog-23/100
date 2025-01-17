@@ -1,5 +1,6 @@
 #include <iostream>
 #include "funciones.h"
+#include "modoUnJugador.h"
 
 using namespace std;
 
