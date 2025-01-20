@@ -4,16 +4,21 @@
 	"funciones.h"
 	"modoUnJugador.h"
 
-1737140328 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
+1737413476 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
 
-1737140328 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
+1737413173 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
 	"funciones.h"
-
-1737333843 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
 	"modoUnJugador.h"
+
+1737413189 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"modoUnJugador.h"
+	"funciones.h"
 
 1737140029 c:\users\mateopisano\desktop\100\dados_locos\multijugador.h
 

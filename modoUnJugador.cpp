@@ -2,6 +2,8 @@
 #include <ctime>
 #include <cstdlib>
 #include "modoUnJugador.h"
+#include "funciones.h"
+
 
 
 void modoUnJugador()
@@ -39,83 +41,25 @@ void modoUnJugador()
         system("pause");
 
         int vectorDados[6];
-        std::srand(std::time(0));
 
-        for (int x = 0; x < 6 ; x++)
-        {
-            vectorDados[x]= (std::rand() %6)+ 1;
-        }
+        asignacion(vectorDados); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
 
-        for (int x = 0; x < 6 ; x++)
-        {
-            std::cout << vectorDados[x] << "  ";
-        }
+        muestraDados(vectorDados); // MUESTRA DADOS.
 
         // CALCULAR PUNTAJE DE LANZAMIENTO.
 
         puntajeDeLanzamiento = 0 ;
 
-        //Ordena en forma de escalera, con el "metodo de burbujeo".
-        for (int i = 0; i < 6 - 1; i++)
-        {
-            for (int j = 0; j < 6 - i - 1; j++)
-            {
-                if (vectorDados[j] > vectorDados[j + 1])
-                {
-                    int temporal = vectorDados[j];
-                    vectorDados[j] = vectorDados[j + 1];
-                    vectorDados[j + 1] = temporal;
-                }
-            }
-        }
+        burbujeOrdena(vectorDados); // BURBUJEO, PARA ORDENAR LA ESCALERA.
 
         /// CALCULA COMBINACIONES.
         int escalera = 0;
         int sexteto = 0;
-        int normal = 0;
 
-        for (int x = 1; x < 6; x++)
-        {
-            // RECONOCE ESCALERA.
-            if(vectorDados[x -1 ] < vectorDados[x] /*&& vectorDados[x] != */ )
-            {
-                escalera++;
-            }
-        }
+        validarEscalera(vectorDados, escalera);
+        validarSexteto(vectorDados, sexteto);
 
-        for (int x = 1; x < 6; x++){
-            // RECONOCE SEXTETO.
-            if(vectorDados[x] == vectorDados[x-1])
-            {
-                sexteto++;
-            }
-        }
-
-        if(escalera == 5)
-        {
-            // CALCULA ESCALERA.
-            puntajeDeLanzamiento = 100;
-            nroDeLanzamiento = 3;
-        }
-        else if(sexteto == 5)
-        {
-            // CALCULA SEXTETO.
-
-            if(vectorDados[1] == 6){
-                puntajeTotal = 0;
-                nroDeLanzamiento = 3;
-            }else{
-                 puntajeDeLanzamiento = vectorDados[1] * 10;
-            }
-        }
-        else
-        {
-            // CALCULA PUNTAJE NORMAL.
-            for (int x = 0; x < 6; x++)
-            {
-                puntajeDeLanzamiento = puntajeDeLanzamiento + vectorDados[x];
-            }
-        }
+        asignacionPuntajes(escalera, puntajeDeLanzamiento, nroDeLanzamiento, sexteto, vectorDados, puntajeTotal);
 
 
         std::cout << " " << std::endl;
@@ -127,28 +71,12 @@ void modoUnJugador()
 
         // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
 
-        if(puntajeDeLanzamiento >= puntajeMaximoDeLaRonda )
-        {
-            puntajeMaximoDeLaRonda = puntajeDeLanzamiento;
-        }
+        calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamiento, puntajeMaximoDeLaRonda);
 
         // LANZAMIENTOS.
 
-        nroDeLanzamiento++;
+        sumaYRestablece(nroDeLanzamiento, ronda, puntajeMaximoDeLaRonda, puntajeTotal);
 
-        if( nroDeLanzamiento == 4)
-        {
-            nroDeLanzamiento = 1;
-
-            // ASIGNAR PUNTAJE TOTAL.
-
-            puntajeTotal = puntajeTotal + puntajeMaximoDeLaRonda;
-            //
-            puntajeMaximoDeLaRonda = 0;
-
-            // SE SUMAN LAS RONDAS.
-            ronda++;
-        }
     }
 
     std::cout <<nombre << " has finalizado !" << std::endl;
@@ -156,3 +84,5 @@ void modoUnJugador()
     system("pause");
 
 }
+
+
