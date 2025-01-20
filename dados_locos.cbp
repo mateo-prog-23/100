@@ -35,6 +35,8 @@
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="modoUnJugador.cpp" />
+		<Unit filename="modoUnJugador.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

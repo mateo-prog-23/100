@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include "multijugador.h"
+#include "modoUnJugador.h"
 
 
 void modoUnJugador()
@@ -12,8 +12,11 @@ void modoUnJugador()
     int puntajeTotal = 0;
     int puntajeMaximoDeLaRonda =0;
 
-    // DECLARACION DE LANZAMIENTOS
+    // DECLARACION DE LANZAMIENTOS.
     int nroDeLanzamiento = 1;
+
+    // USADO EN LA COMPARACION DE LANZAMIENTOS.
+    int puntajeDeLanzamiento = 0;
 
     std::cout << "Bienvenido al modo un jugador." << std::endl;
     std::cout << "Ingrese su nombre : ";
@@ -46,33 +49,110 @@ void modoUnJugador()
         for (int x = 0; x < 6 ; x++)
         {
             std::cout << vectorDados[x] << "  ";
-
         }
+
+        // CALCULAR PUNTAJE DE LANZAMIENTO.
+
+        puntajeDeLanzamiento = 0 ;
+
+        //Ordena en forma de escalera, con el "metodo de burbujeo".
+        for (int i = 0; i < 6 - 1; i++)
+        {
+            for (int j = 0; j < 6 - i - 1; j++)
+            {
+                if (vectorDados[j] > vectorDados[j + 1])
+                {
+                    int temporal = vectorDados[j];
+                    vectorDados[j] = vectorDados[j + 1];
+                    vectorDados[j + 1] = temporal;
+                }
+            }
+        }
+
+        /// CALCULA COMBINACIONES.
+        int escalera = 0;
+        int sexteto = 0;
+        int normal = 0;
+
+        for (int x = 1; x < 6; x++)
+        {
+            // RECONOCE ESCALERA.
+            if(vectorDados[x -1 ] < vectorDados[x] /*&& vectorDados[x] != */ )
+            {
+                escalera++;
+            }
+        }
+
+        for (int x = 1; x < 6; x++){
+            // RECONOCE SEXTETO.
+            if(vectorDados[x] == vectorDados[x-1])
+            {
+                sexteto++;
+            }
+        }
+
+        if(escalera == 5)
+        {
+            // CALCULA ESCALERA.
+            puntajeDeLanzamiento = 100;
+            nroDeLanzamiento = 3;
+        }
+        else if(sexteto == 5)
+        {
+            // CALCULA SEXTETO.
+
+            if(vectorDados[1] == 6){
+                puntajeTotal = 0;
+                nroDeLanzamiento = 3;
+            }else{
+                 puntajeDeLanzamiento = vectorDados[1] * 10;
+            }
+        }
+        else
+        {
+            // CALCULA PUNTAJE NORMAL.
+            for (int x = 0; x < 6; x++)
+            {
+                puntajeDeLanzamiento = puntajeDeLanzamiento + vectorDados[x];
+            }
+        }
+
+
         std::cout << " " << std::endl;
+        std::cout << "Puntos obtenidos en este lanzamiento = " << puntajeDeLanzamiento << std::endl;
+        std::cout << " " << std::endl;
+
         system("pause");
         system("cls");
 
-        // SE SUMAN LAS RONDAS.
-        ronda++;
-
         // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
 
-        puntajeMaximoDeLaRonda = 0 ;
-
-        for (int x = 0; x < 6 ; x++)
+        if(puntajeDeLanzamiento >= puntajeMaximoDeLaRonda )
         {
-            puntajeMaximoDeLaRonda = puntajeMaximoDeLaRonda + vectorDados[x];
+            puntajeMaximoDeLaRonda = puntajeDeLanzamiento;
         }
 
         // LANZAMIENTOS.
 
         nroDeLanzamiento++;
 
-        if( nroDeLanzamiento == 4){
+        if( nroDeLanzamiento == 4)
+        {
             nroDeLanzamiento = 1;
+
+            // ASIGNAR PUNTAJE TOTAL.
+
+            puntajeTotal = puntajeTotal + puntajeMaximoDeLaRonda;
+            //
+            puntajeMaximoDeLaRonda = 0;
+
+            // SE SUMAN LAS RONDAS.
+            ronda++;
         }
-
-        // COMPARAR LOS 3 LANZAMIENTOS.
-
     }
+
+    std::cout <<nombre << " has finalizado !" << std::endl;
+    std::cout << "Puntaje obtenido : " << puntajeTotal << " | En " << ronda << " rondas." << std::endl;
+    system("pause");
+
 }

@@ -9,11 +9,11 @@
 1737140328 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
 	"funciones.h"
 
-1737142943 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
+1737333843 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
-	"multijugador.h"
+	"modoUnJugador.h"
 
 1737140029 c:\users\mateopisano\desktop\100\dados_locos\multijugador.h
 
