@@ -6,14 +6,14 @@
 
 1737413476 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
 
-1737413173 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
+1737413442 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
 	"funciones.h"
 	<iostream>
 	<ctime>
 	<cstdlib>
 	"modoUnJugador.h"
 
-1737413189 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
+1737416376 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>

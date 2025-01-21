@@ -69,6 +69,7 @@ void asignacionPuntajes(int escalera, int &puntajeDeLanzamiento, int &nroDeLanza
             // CALCULA ESCALERA.
             puntajeDeLanzamiento = 100;
             nroDeLanzamiento = 3;
+            std::cout << "Escalera ! Ganaste la partida ! ";
         }
         else if(sexteto == 5)
         {

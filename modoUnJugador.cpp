@@ -79,7 +79,7 @@ void modoUnJugador()
 
     }
 
-    std::cout <<nombre << " has finalizado !" << std::endl;
+    std::cout <<nombre << " haz finalizado !" << std::endl;
     std::cout << "Puntaje obtenido : " << puntajeTotal << " | En " << ronda << " rondas." << std::endl;
     system("pause");
 
