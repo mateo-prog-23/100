@@ -6,7 +6,7 @@
 
 
 
-void modoUnJugador()
+void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional)
 {
 
     std::string nombre;
@@ -100,8 +100,12 @@ void modoUnJugador()
     }
 
     std::cout <<nombre << " haz finalizado !" << std::endl;
-    std::cout << "Puntaje obtenido : " << puntajeTotal << " | En " << ronda << " rondas." << std::endl;
+    std::cout << "Puntaje obtenido : " << puntajeTotal << " | En " << ronda-1 << " rondas." << std::endl;
     system("pause");
+
+    puntuacionProvisional = puntajeTotal;
+    nombreProvisional = nombre;
+
 
 }
 

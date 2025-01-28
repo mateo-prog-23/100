@@ -1,6 +1,11 @@
 #ifndef MODOUNJUGADOR_H_INCLUDED
 #define MODOUNJUGADOR_H_INCLUDED
 
-void modoUnJugador();
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional);
 
 #endif // MODOUNJUGADOR_H_INCLUDED

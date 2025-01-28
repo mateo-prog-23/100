@@ -5,7 +5,7 @@
 #include "modoUnJugador.h"
 #include "funciones.h"
 
-void modoMultijugador()
+void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
 {
 
     std::string jugadorNro1;
@@ -162,7 +162,7 @@ void modoMultijugador()
 
         if(puntajeTotalNro1 < 100 || puntajeDeLanzamientoNro2 < 100)
         {
-            std::cout << "Ronda " << rondaNro1 <<std::endl;
+            std::cout << "Ronda " << rondaNro1-1 <<std::endl;
             std::cout << "Turno de " << jugadorNro1 << std::endl;
             std::cout << "Puntaje " << jugadorNro2 << " : " << puntajeTotalNro2 << std::endl;
             std::cout << "Puntaje " << jugadorNro1 << " : " << puntajeTotalNro1 << std::endl;
@@ -182,11 +182,19 @@ void modoMultijugador()
     {
         std::cout << "Felicidades " << jugadorNro1 << " !! Haz ganado" << std::endl;
         std::cout << "Puntaje : " << puntajeTotalNro1 << " || Rondas : " << rondaNro1 << std::endl;
+        puntuacionProvisional = puntajeTotalNro1;
+        nombreProvisional = jugadorNro1;
+        system("pause");
+        system("cls");
     }
     else
     {
         std::cout << "Felicidades " << jugadorNro2 << " !! Haz ganado" << std::endl;
         std::cout << "Puntaje : " << puntajeTotalNro2 << " || Rondas : " << rondaNro2 << std::endl;
+        puntuacionProvisional = puntajeTotalNro2;
+        nombreProvisional = jugadorNro2;
+        system("pause");
+        system("cls");
     }
 
 

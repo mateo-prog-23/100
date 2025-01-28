@@ -1,6 +1,11 @@
 #ifndef MODOMULTIJUGADOR_H_INCLUDED
 #define MODOMULTIJUGADOR_H_INCLUDED
 
-void modoMultijugador();
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional);
 
 #endif // MODOMULTIJUGADOR_H_INCLUDED
