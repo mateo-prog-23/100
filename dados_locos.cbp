@@ -41,6 +41,9 @@
 		<Unit filename="modoMultijugador.h" />
 		<Unit filename="modoUnJugador.cpp" />
 		<Unit filename="modoUnJugador.h" />
+		<Unit filename="rlutil.h" />
+		<Unit filename="simulado.cpp" />
+		<Unit filename="simulado.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

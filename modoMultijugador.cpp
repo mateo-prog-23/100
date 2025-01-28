@@ -27,6 +27,8 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
     int nroDeLanzamientoNro1 = 1;
     // USADO EN LA COMPARACION DE LANZAMIENTOS.
     int puntajeDeLanzamientoNro1 = 0;
+    int calculadorEmpateNro1 = 0;
+
 
     ///JUGADOR 2
     int rondaNro2 = 1;
@@ -35,9 +37,15 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
     int nroDeLanzamientoNro2 = 1;
     // USADO EN LA COMPARACION DE LANZAMIENTOS.
     int puntajeDeLanzamientoNro2 = 0;
+    int calculadorEmpateNro2 = 0;
 
     while(puntajeTotalNro1 < 100 && puntajeTotalNro2 <  100)
     {
+        // CALCULO DE LANZAMIENTOS PARA DESEMPATE
+
+        int antNro1 = 0;
+        int marcaNro1 = 0;
+
         for (int x = 0; x < 3 ; x++)
         {
             ///////////////////////////
@@ -93,7 +101,18 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
 
             sumaYRestablece(nroDeLanzamientoNro1, rondaNro1, puntajeMaximoDeLaRondaNro1);
 
+            // CALCULO DE LANZAMIENTOS PARA DESEMPATE
+
+            if(puntajeDeLanzamientoNro1 > antNro1 )
+            {
+                antNro1 = puntajeDeLanzamientoNro1;
+                marcaNro1++;
+            }
+
         }
+
+        calculadorEmpateNro1 = calculadorEmpateNro1 + marcaNro1;
+
 
         std::cout << "Ronda N " << rondaNro2 << std::endl;
         std::cout << "Turno de " << jugadorNro2 <<std::endl;
@@ -103,8 +122,13 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
         system("pause");
         system("cls");
 
+        int antNro2 = 0;
+        int marcaNro2 = 0;
+
         for(int x = 0; x < 3; x++)
         {
+
+
             ///////////////////////////
             /// JUGADOR 2
             ///////////////////////////
@@ -156,9 +180,17 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
 
             sumaYRestablece(nroDeLanzamientoNro2, rondaNro2, puntajeMaximoDeLaRondaNro2);
 
+            // CALCULO DE LANZAMIENTOS PARA DESEMPATE
+
+            if(puntajeDeLanzamientoNro2 > antNro2 )
+            {
+                antNro2 = puntajeDeLanzamientoNro1;
+                marcaNro2++;
+            }
+
         }
 
-
+        calculadorEmpateNro2 = calculadorEmpateNro2 + marcaNro2;
 
         if(puntajeTotalNro1 < 100 || puntajeDeLanzamientoNro2 < 100)
         {
@@ -178,7 +210,28 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
 
     }
 
-    if(puntajeTotalNro1 > puntajeTotalNro2)
+    if(puntajeTotalNro1 == puntajeTotalNro2)
+    {
+        if(calculadorEmpateNro1 > calculadorEmpateNro2)
+        {
+            std::cout << "Felicidades " << jugadorNro1 << " !! Haz ganado" << std::endl;
+            std::cout << "Puntaje : " << puntajeTotalNro1 << " || Rondas : " << rondaNro1 << " | Lanzamientos : " << calculadorEmpateNro1 <<std::endl;
+            puntuacionProvisional = puntajeTotalNro1;
+            nombreProvisional = jugadorNro1;
+            system("pause");
+            system("cls");
+        }
+        else
+        {
+            std::cout << "Felicidades " << jugadorNro2 << " !! Haz ganado" << std::endl;
+            std::cout << "Puntaje : " << puntajeTotalNro2 << " || Rondas : " << rondaNro2 << " | Lanzamientos : " << calculadorEmpateNro2 <<std::endl;
+            puntuacionProvisional = puntajeTotalNro2;
+            nombreProvisional = jugadorNro2;
+            system("pause");
+            system("cls");
+        }
+    }
+    else if(puntajeTotalNro1 > puntajeTotalNro2)
     {
         std::cout << "Felicidades " << jugadorNro1 << " !! Haz ganado" << std::endl;
         std::cout << "Puntaje : " << puntajeTotalNro1 << " || Rondas : " << rondaNro1 << std::endl;

@@ -10,7 +10,7 @@ void asignacion(int vectorDados[])
     std::srand(std::time(0));
     for (int x = 0; x < 6 ; x++)
     {
-        vectorDados[x]= (std::rand() %6)+ 1;
+        vectorDados[x]= (std::rand() %6)+ 1 ;
     }
 }
 

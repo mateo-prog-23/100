@@ -1,14 +1,16 @@
 # depslib dependency file v1.0
-1738096637 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
+1738106560 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
 	<iostream>
 	"funciones.h"
 	"modoUnJugador.h"
 	"modoMultijugador.h"
 	"mayoresPuntuaciones.h"
+	"rlutil.h"
+	"simulado.h"
 
 1737745987 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
 
-1737745740 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
+1738106003 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
 	"funciones.h"
 	<iostream>
 	<ctime>
@@ -30,7 +32,7 @@
 	<cstdlib>
 	<string>
 
-1738097480 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.cpp
+1738106209 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.cpp
 	"modoMultijugador.h"
 	<iostream>
 	<ctime>
@@ -44,7 +46,7 @@
 	<cstdlib>
 	<string>
 
-1738098366 source:c:\users\mateopisano\desktop\100\dados_locos\mayorespuntuaciones.cpp
+1738100220 source:c:\users\mateopisano\desktop\100\dados_locos\mayorespuntuaciones.cpp
 	"mayoresPuntuaciones.h"
 	"modoMultijugador.h"
 	<iostream>
@@ -52,9 +54,29 @@
 	<cstdlib>
 	"modoUnJugador.h"
 	"funciones.h"
+	"rlutil.h"
 
 1738091419 c:\users\mateopisano\desktop\100\dados_locos\mayorespuntuaciones.h
 	<iostream>
 	<ctime>
 	<cstdlib>
+
+1738099967 c:\users\mateopisano\desktop\100\dados_locos\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1738106445 c:\users\mateopisano\desktop\100\dados_locos\simulado.h
+
+1738106535 source:c:\users\mateopisano\desktop\100\dados_locos\simulado.cpp
+	"simulado.h"
 
