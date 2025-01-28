@@ -99,15 +99,13 @@ void calculaPuntajeMaximoDeLaRonda(int puntajeDeLanzamiento, int &puntajeMaximoD
         }
 }
 
-void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRonda, int &puntajeTotal){
+void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRonda){
 
-    nroDeLanzamiento++;
+
     if( nroDeLanzamiento == 4)
         {
             nroDeLanzamiento = 1;
 
-            // ASIGNAR PUNTAJE TOTAL.
-            puntajeTotal = puntajeTotal + puntajeMaximoDeLaRonda;
             //
             puntajeMaximoDeLaRonda = 0;
 
@@ -116,4 +114,10 @@ void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRo
         }
 }
 
+void calculaPuntajeTotal(int nroDeLanzamiento, int &puntajeTotal, int puntajeMaximoDeLaRonda){
+    if(nroDeLanzamiento == 4){
+            // ASIGNAR PUNTAJE TOTAL.
+            puntajeTotal = puntajeTotal + puntajeMaximoDeLaRonda;
+        }
+}
 

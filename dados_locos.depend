@@ -1,20 +1,20 @@
 # depslib dependency file v1.0
-1737494481 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
+1737748103 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
 	<iostream>
 	"funciones.h"
 	"modoUnJugador.h"
 	"modoMultijugador.h"
 
-1737413476 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
+1737745987 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
 
-1737493743 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
+1737745740 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
 	"funciones.h"
 	<iostream>
 	<ctime>
 	<cstdlib>
 	"modoUnJugador.h"
 
-1737416376 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
+1737745760 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -25,7 +25,7 @@
 
 1737493791 c:\users\mateopisano\desktop\100\dados_locos\modounjugador.h
 
-1737581814 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.cpp
+1737747612 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.cpp
 	"modoMultijugador.h"
 	<iostream>
 	<ctime>

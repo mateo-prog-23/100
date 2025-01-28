@@ -75,6 +75,8 @@ void modoMultijugador()
 
             asignacionPuntajes(escalera, puntajeDeLanzamientoNro1, nroDeLanzamientoNro1, sexteto, vectorDadosNro1, puntajeTotalNro1);
 
+            nroDeLanzamientoNro1++;
+            calculaPuntajeTotal(nroDeLanzamientoNro1,puntajeTotalNro1, puntajeMaximoDeLaRondaNro1);
 
             std::cout << " " << std::endl;
             std::cout << "Puntos obtenidos en este lanzamiento = " << puntajeDeLanzamientoNro1 << std::endl;
@@ -89,7 +91,7 @@ void modoMultijugador()
 
             // LANZAMIENTOS.
 
-            sumaYRestablece(nroDeLanzamientoNro1, rondaNro1, puntajeMaximoDeLaRondaNro1, puntajeTotalNro1);
+            sumaYRestablece(nroDeLanzamientoNro1, rondaNro1, puntajeMaximoDeLaRondaNro1);
 
         }
 
@@ -137,6 +139,11 @@ void modoMultijugador()
 
             asignacionPuntajes(escalera, puntajeDeLanzamientoNro2, nroDeLanzamientoNro2, sexteto, vectorDadosNro2, puntajeTotalNro2);
 
+            // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
+            calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamientoNro2, puntajeMaximoDeLaRondaNro2);
+
+            nroDeLanzamientoNro2++;
+            calculaPuntajeTotal(nroDeLanzamientoNro2, puntajeTotalNro2, puntajeMaximoDeLaRondaNro2);
 
             std::cout << " " << std::endl;
             std::cout << "Puntos obtenidos en este lanzamiento = " << puntajeDeLanzamientoNro2 << std::endl;
@@ -145,13 +152,9 @@ void modoMultijugador()
             system("pause");
             system("cls");
 
-            // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
-
-            calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamientoNro2, puntajeMaximoDeLaRondaNro2);
-
             // LANZAMIENTOS.
 
-            sumaYRestablece(nroDeLanzamientoNro2, rondaNro2, puntajeMaximoDeLaRondaNro2, puntajeTotalNro2);
+            sumaYRestablece(nroDeLanzamientoNro2, rondaNro2, puntajeMaximoDeLaRondaNro2);
 
         }
 
@@ -173,6 +176,17 @@ void modoMultijugador()
         }
 
 
+    }
+
+    if(puntajeTotalNro1 > puntajeTotalNro2)
+    {
+        std::cout << "Felicidades " << jugadorNro1 << " !! Haz ganado" << std::endl;
+        std::cout << "Puntaje : " << puntajeTotalNro1 << " || Rondas : " << rondaNro1 << std::endl;
+    }
+    else
+    {
+        std::cout << "Felicidades " << jugadorNro2 << " !! Haz ganado" << std::endl;
+        std::cout << "Puntaje : " << puntajeTotalNro2 << " || Rondas : " << rondaNro2 << std::endl;
     }
 
 

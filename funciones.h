@@ -14,6 +14,8 @@ void asignacionPuntajes(int escalera, int &puntajeDeLanzamiento, int &nroDeLanza
 void calculaPuntajeMaximoDeLaRonda(int puntajeDeLanzamiento, int &puntajeMaximoDeLaRonda);
 
 // SECCION LANZAMIENTOS.
-void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRonda, int &puntajeTotal);
+void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRonda);
+
+void calculaPuntajeTotal(int nroDeLanzamiento,int &puntajeTotal, int puntajeMaximoDeLaRonda);
 
 #endif // FUNCIONES_H_INCLUDED

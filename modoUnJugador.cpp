@@ -73,9 +73,29 @@ void modoUnJugador()
 
         calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamiento, puntajeMaximoDeLaRonda);
 
+        nroDeLanzamiento++;
+
+        calculaPuntajeTotal(nroDeLanzamiento,puntajeTotal, puntajeMaximoDeLaRonda);
+
+        if(nroDeLanzamiento == 4)
+        {
+            system("cls");
+
+            std::cout << "Ronda " << ronda <<std::endl;
+            std::cout << "Turno de " << nombre << std::endl;
+            std::cout << "Puntaje : " << puntajeTotal << std::endl;
+
+            system("pause");
+
+            system("cls");
+
+        }
+
         // LANZAMIENTOS.
 
-        sumaYRestablece(nroDeLanzamiento, ronda, puntajeMaximoDeLaRonda, puntajeTotal);
+        sumaYRestablece(nroDeLanzamiento, ronda, puntajeMaximoDeLaRonda);
+
+
 
     }
 
