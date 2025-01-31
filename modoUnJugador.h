@@ -6,6 +6,6 @@
 #include <cstdlib>
 #include <string>
 
-void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional);
+void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional,  bool &activar);
 
 #endif // MODOUNJUGADOR_H_INCLUDED

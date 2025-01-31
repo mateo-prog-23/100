@@ -1,7 +1,7 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
-void asignacion(int vectorDados[]);
+void asignacion(int vectorDados[], bool activar);
 void muestraDados(int vectorDados[]);
 
 void burbujeOrdena(int vectorDados[]);

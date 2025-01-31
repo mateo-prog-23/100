@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1738106560 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
+1738270780 source:c:\users\mateopisano\desktop\100\dados_locos\main.cpp
 	<iostream>
 	"funciones.h"
 	"modoUnJugador.h"
@@ -8,16 +8,16 @@
 	"rlutil.h"
 	"simulado.h"
 
-1737745987 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
+1738267606 c:\users\mateopisano\desktop\100\dados_locos\funciones.h
 
-1738106003 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
+1738268233 source:c:\users\mateopisano\desktop\100\dados_locos\funciones.cpp
 	"funciones.h"
 	<iostream>
 	<ctime>
 	<cstdlib>
 	"modoUnJugador.h"
 
-1738091674 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
+1738267675 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugador.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -26,13 +26,13 @@
 
 1737140029 c:\users\mateopisano\desktop\100\dados_locos\multijugador.h
 
-1738091408 c:\users\mateopisano\desktop\100\dados_locos\modounjugador.h
+1738267698 c:\users\mateopisano\desktop\100\dados_locos\modounjugador.h
 	<iostream>
 	<ctime>
 	<cstdlib>
 	<string>
 
-1738106209 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.cpp
+1738267611 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.cpp
 	"modoMultijugador.h"
 	<iostream>
 	<ctime>
@@ -40,7 +40,7 @@
 	"modoUnJugador.h"
 	"funciones.h"
 
-1738096774 c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.h
+1738267688 c:\users\mateopisano\desktop\100\dados_locos\modomultijugador.h
 	<iostream>
 	<ctime>
 	<cstdlib>
@@ -75,8 +75,24 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1738106445 c:\users\mateopisano\desktop\100\dados_locos\simulado.h
+1738267155 c:\users\mateopisano\desktop\100\dados_locos\simulado.h
 
-1738106535 source:c:\users\mateopisano\desktop\100\dados_locos\simulado.cpp
+1738268088 source:c:\users\mateopisano\desktop\100\dados_locos\simulado.cpp
 	"simulado.h"
+	"modoMultijugadorSimulado.h"
+	"ModoUnJugadorSimulado.h"
+	"rlutil.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1738266079 source:c:\users\mateopisano\desktop\100\dados_locos\modomultijugadorsimulado.cpp
+	"modoMultijugadorSimulado.h"
+
+1738266086 c:\users\mateopisano\desktop\100\dados_locos\modomultijugadorsimulado.h
+
+1738267426 source:c:\users\mateopisano\desktop\100\dados_locos\modounjugadorsimulado.cpp
+	"ModoUnJugadorSimulado.h"
+
+1738265996 c:\users\mateopisano\desktop\100\dados_locos\modounjugadorsimulado.h
 

@@ -5,13 +5,29 @@
 #include "modoUnJugador.h"
 
 
-void asignacion(int vectorDados[])
+void asignacion(int vectorDados[], bool activar)
 {
     std::srand(std::time(0));
-    for (int x = 0; x < 6 ; x++)
+
+    int valorDado;
+
+    if(activar == false)
     {
-        vectorDados[x]= (std::rand() %6)+ 1 ;
+        for (int x = 0; x < 6 ; x++)
+        {
+            vectorDados[x]= (std::rand() %6)+ 1 ;
+        }
     }
+    else
+    {
+        std::cout << "Ingrese los valores de los dados por favor..." << std::endl;
+        for (int x = 0; x < 6 ; x++)
+        {
+            std::cin >> valorDado;
+            vectorDados[x]= valorDado ;
+        }
+    }
+
 }
 
 void muestraDados(int vectorDados[])
@@ -63,61 +79,72 @@ void validarSexteto(int vectorDados[], int &sexteto)
     }
 }
 
-void asignacionPuntajes(int escalera, int &puntajeDeLanzamiento, int &nroDeLanzamiento, int sexteto, int vectorDados[], int &puntajeTotal){
+void asignacionPuntajes(int escalera, int &puntajeDeLanzamiento, int &nroDeLanzamiento, int sexteto, int vectorDados[], int &puntajeTotal)
+{
     if(escalera == 5)
-        {
-            // CALCULA ESCALERA.
-            puntajeDeLanzamiento = 100;
-            nroDeLanzamiento = 3;
-            std::cout << "Escalera ! Ganaste la partida ! ";
-        }
-        else if(sexteto == 5)
-        {
-            // CALCULA SEXTETO.
+    {
+        // CALCULA ESCALERA.
+        puntajeDeLanzamiento = 100;
+        nroDeLanzamiento = 3;
+        std::cout << "Escalera ! Ganaste la partida ! ";
+    }
+    else if(sexteto == 5)
+    {
+        // CALCULA SEXTETO.
 
-            if(vectorDados[1] == 6){
-                puntajeTotal = 0;
-                nroDeLanzamiento = 3;
-            }else{
-                 puntajeDeLanzamiento = vectorDados[1] * 10;
-            }
+        if(vectorDados[1] == 6)
+        {
+            puntajeTotal = 0;
+            nroDeLanzamiento = 3;
         }
         else
         {
-            // CALCULA PUNTAJE NORMAL.
-            for (int x = 0; x < 6; x++)
-            {
-                puntajeDeLanzamiento = puntajeDeLanzamiento + vectorDados[x];
-            }
+            puntajeDeLanzamiento = vectorDados[1] * 10;
         }
-}
-
-void calculaPuntajeMaximoDeLaRonda(int puntajeDeLanzamiento, int &puntajeMaximoDeLaRonda){
-    if(puntajeDeLanzamiento >= puntajeMaximoDeLaRonda )
+    }
+    else
+    {
+        // CALCULA PUNTAJE NORMAL.
+        for (int x = 0; x < 6; x++)
         {
-            puntajeMaximoDeLaRonda = puntajeDeLanzamiento;
+            puntajeDeLanzamiento = puntajeDeLanzamiento + vectorDados[x];
         }
+    }
 }
 
-void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRonda){
+void calculaPuntajeMaximoDeLaRonda(int puntajeDeLanzamiento, int &puntajeMaximoDeLaRonda)
+{
+    if(puntajeDeLanzamiento >= puntajeMaximoDeLaRonda )
+    {
+        puntajeMaximoDeLaRonda = puntajeDeLanzamiento;
+    }
+}
+
+void sumaYRestablece(int &nroDeLanzamiento, int &ronda, int &puntajeMaximoDeLaRonda)
+{
 
 
     if( nroDeLanzamiento == 4)
-        {
-            nroDeLanzamiento = 1;
+    {
+        nroDeLanzamiento = 1;
 
-            //
-            puntajeMaximoDeLaRonda = 0;
+        //
+        puntajeMaximoDeLaRonda = 0;
 
-            // SE SUMAN LAS RONDAS.
-            ronda++;
-        }
+        // SE SUMAN LAS RONDAS.
+        ronda++;
+    }
 }
 
-void calculaPuntajeTotal(int nroDeLanzamiento, int &puntajeTotal, int puntajeMaximoDeLaRonda){
-    if(nroDeLanzamiento == 4){
-            // ASIGNAR PUNTAJE TOTAL.
-            puntajeTotal = puntajeTotal + puntajeMaximoDeLaRonda;
-        }
+void calculaPuntajeTotal(int nroDeLanzamiento, int &puntajeTotal, int puntajeMaximoDeLaRonda)
+{
+    if(nroDeLanzamiento == 4)
+    {
+        // ASIGNAR PUNTAJE TOTAL.
+        puntajeTotal = puntajeTotal + puntajeMaximoDeLaRonda;
+    }
 }
+
+/// MODO SIMULADO FUNCIONES
+
 

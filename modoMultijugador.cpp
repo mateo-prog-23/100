@@ -5,7 +5,7 @@
 #include "modoUnJugador.h"
 #include "funciones.h"
 
-void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
+void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional, bool &activar)
 {
 
     std::string jugadorNro1;
@@ -64,7 +64,7 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
 
             int vectorDadosNro1[6];
 
-            asignacion(vectorDadosNro1); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
+            asignacion(vectorDadosNro1, activar); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
 
             muestraDados(vectorDadosNro1); // MUESTRA DADOS.
 
@@ -144,7 +144,7 @@ void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional)
 
             int vectorDadosNro2[6];
 
-            asignacion(vectorDadosNro2); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
+            asignacion(vectorDadosNro2, activar); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
 
             muestraDados(vectorDadosNro2); // MUESTRA DADOS.
 

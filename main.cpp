@@ -22,29 +22,50 @@ int main()
     int antPuntuacion{};
     string antNombre{};
 
+    // activar simulado
+    bool activar = false;
+
     while(continuar)
     {
         rlutil::setBackgroundColor(rlutil::YELLOW);
         rlutil::setColor(rlutil::BLACK);
 
-        cout << "Ingrese un numero segun la opcion que desee." << endl;
-        cout << "1 - 1 jugador " << endl;
-        cout << "2 - 2 jugadores" << endl;
-        cout << "3 - Mayores puntuaciones"<< endl;
-        cout << "4 - Simulado " << endl;
-        cout << "5 - Salir" <<endl;
-        cin >> opcion;
-        system("cls");
+
+
+        if(activar == false)
+        {
+            cout << "Pulse el numero segun la opcion que desee..." << endl;
+            cout << "(1) 1 jugador " << endl;
+            cout << "(2) 2 jugadores" << endl;
+            cout << "(3) Mayores puntuaciones"<< endl;
+            cout << "(4) Simulado | NO " << endl;
+            cout << "(5) Salir" <<endl;
+            cin >> opcion;
+            system("cls");
+        }
+        else
+        {
+            cout << "Pulse el numero segun la opcion que desee..." << endl;
+            cout << "(1) 1 jugador " << endl;
+            cout << "(2) 2 jugadores" << endl;
+            cout << "(3) Mayores puntuaciones"<< endl;
+            cout << "(4) Simulado | SI " << endl;
+            cout << "(5) Salir" <<endl;
+            cin >> opcion;
+            system("cls");
+        }
+
+
 
 
         switch(opcion)
         {
         case 1:
-            modoUnJugador(puntuacionProvisional, nombreProvisional);
+            modoUnJugador(puntuacionProvisional, nombreProvisional, activar);
             system("cls");
             break;
         case 2:
-            modoMultijugador(puntuacionProvisional, nombreProvisional);
+            modoMultijugador(puntuacionProvisional, nombreProvisional, activar);
             system("cls");
 
             break;
@@ -55,7 +76,7 @@ int main()
             break;
 
         case 4:
-            simulado();
+            simulado(activar);
             system("cls");
             break;
         case 5:

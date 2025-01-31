@@ -6,7 +6,7 @@
 
 
 
-void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional)
+void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional, bool &activar)
 {
 
     std::string nombre;
@@ -20,13 +20,35 @@ void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional)
     // USADO EN LA COMPARACION DE LANZAMIENTOS.
     int puntajeDeLanzamiento = 0;
 
+    //ELEGIR RONDAS
+
+    int elegirSiRondas;
+    int cantidadRondas;
+
+    std::cout << "Desea elegir la cantidad de rondas ?" << std::endl;
+    std::cout << "(1) Si " << std::endl;
+    std::cout << "(2) No " << std::endl;
+
+    std::cin >> elegirSiRondas;
+
+    std::cout << "" << std::endl;
+
+    if(elegirSiRondas == 1 )
+    {
+        std::cout << "Ingrese la cantidad de rondas " << std::endl;
+        std::cin >> cantidadRondas ;
+        system("cls");
+    }
+
+
     std::cout << "Bienvenido al modo un jugador." << std::endl;
     std::cout << "Ingrese su nombre : ";
     std::cin >> nombre;
 
     system("cls");
 
-    while(puntajeTotal < 100)
+
+    while(puntajeTotal < 100 )
     {
 
 
@@ -42,7 +64,7 @@ void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional)
 
         int vectorDados[6];
 
-        asignacion(vectorDados); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
+        asignacion(vectorDados, activar); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
 
         muestraDados(vectorDados); // MUESTRA DADOS.
 

@@ -6,6 +6,6 @@
 #include <cstdlib>
 #include <string>
 
-void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional);
+void modoMultijugador(int &puntuacionProvisional,std::string &nombreProvisional, bool &activar);
 
 #endif // MODOMULTIJUGADOR_H_INCLUDED
