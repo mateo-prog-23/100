@@ -35,91 +35,177 @@ void modoUnJugador(int &puntuacionProvisional,std::string &nombreProvisional, bo
 
     if(elegirSiRondas == 1 )
     {
+        /// con eleccion de rondas
+
         std::cout << "Ingrese la cantidad de rondas " << std::endl;
         std::cin >> cantidadRondas ;
         system("cls");
-    }
 
+        std::cout << "Bienvenido al modo un jugador." << std::endl;
+        std::cout << "Ingrese su nombre : ";
+        std::cin >> nombre;
 
-    std::cout << "Bienvenido al modo un jugador." << std::endl;
-    std::cout << "Ingrese su nombre : ";
-    std::cin >> nombre;
-
-    system("cls");
-
-
-    while(puntajeTotal < 100 )
-    {
-
-
-        std::cout << "Turno de " << nombre << " | Ronda " << ronda << " | Puntaje total " << puntajeTotal << std::endl;
-        std::cout << "- - - - - - - - - - - - - - - - - - - - -" << std::endl;
-        std::cout << "Puntaje maximo de la ronda : " << puntajeMaximoDeLaRonda << " pts" << std::endl;
-        std::cout << "Lanzamiento nro : " << nroDeLanzamiento << std::endl;
-        std::cout << "- - - - - - - - - - - - - - - - - - - - -" << std::endl;
-
-        // TIENEN QUE APARECER LOS DADOS.
-
-        system("pause");
-
-        int vectorDados[6];
-
-        asignacion(vectorDados, activar); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
-
-        muestraDados(vectorDados); // MUESTRA DADOS.
-
-        // CALCULAR PUNTAJE DE LANZAMIENTO.
-
-        puntajeDeLanzamiento = 0 ;
-
-        burbujeOrdena(vectorDados); // BURBUJEO, PARA ORDENAR LA ESCALERA.
-
-        /// CALCULA COMBINACIONES.
-        int escalera = 0;
-        int sexteto = 0;
-
-        validarEscalera(vectorDados, escalera);
-        validarSexteto(vectorDados, sexteto);
-
-        asignacionPuntajes(escalera, puntajeDeLanzamiento, nroDeLanzamiento, sexteto, vectorDados, puntajeTotal);
-
-
-        std::cout << " " << std::endl;
-        std::cout << "Puntos obtenidos en este lanzamiento = " << puntajeDeLanzamiento << std::endl;
-        std::cout << " " << std::endl;
-
-        system("pause");
         system("cls");
 
-        // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
-
-        calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamiento, puntajeMaximoDeLaRonda);
-
-        nroDeLanzamiento++;
-
-        calculaPuntajeTotal(nroDeLanzamiento,puntajeTotal, puntajeMaximoDeLaRonda);
-
-        if(nroDeLanzamiento == 4)
+        while(puntajeTotal < 100 && ronda <= cantidadRondas  )
         {
-            system("cls");
 
-            std::cout << "Ronda " << ronda <<std::endl;
-            std::cout << "Turno de " << nombre << std::endl;
-            std::cout << "Puntaje : " << puntajeTotal << std::endl;
+
+            std::cout << "Turno de " << nombre << " | Ronda " << ronda << " | Puntaje total " << puntajeTotal << std::endl;
+            std::cout << "- - - - - - - - - - - - - - - - - - - - -" << std::endl;
+            std::cout << "Puntaje maximo de la ronda : " << puntajeMaximoDeLaRonda << " pts" << std::endl;
+            std::cout << "Lanzamiento nro : " << nroDeLanzamiento << std::endl;
+            std::cout << "- - - - - - - - - - - - - - - - - - - - -" << std::endl;
+
+            // TIENEN QUE APARECER LOS DADOS.
 
             system("pause");
 
+            int vectorDados[6];
+
+            asignacion(vectorDados, activar); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
+
+            muestraDados(vectorDados); // MUESTRA DADOS.
+
+            // CALCULAR PUNTAJE DE LANZAMIENTO.
+
+            puntajeDeLanzamiento = 0 ;
+
+            burbujeOrdena(vectorDados); // BURBUJEO, PARA ORDENAR LA ESCALERA.
+
+            /// CALCULA COMBINACIONES.
+            int escalera = 0;
+            int sexteto = 0;
+
+            validarEscalera(vectorDados, escalera);
+            validarSexteto(vectorDados, sexteto);
+
+            asignacionPuntajes(escalera, puntajeDeLanzamiento, nroDeLanzamiento, sexteto, vectorDados, puntajeTotal);
+
+
+            std::cout << " " << std::endl;
+            std::cout << "Puntos obtenidos en este lanzamiento = " << puntajeDeLanzamiento << std::endl;
+            std::cout << " " << std::endl;
+
+            system("pause");
             system("cls");
 
+            // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
+
+            calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamiento, puntajeMaximoDeLaRonda);
+
+            nroDeLanzamiento++;
+
+            calculaPuntajeTotal(nroDeLanzamiento,puntajeTotal, puntajeMaximoDeLaRonda);
+
+            if(nroDeLanzamiento == 4)
+            {
+                system("cls");
+
+                std::cout << "Ronda " << ronda <<std::endl;
+                std::cout << "Turno de " << nombre << std::endl;
+                std::cout << "Puntaje : " << puntajeTotal << std::endl;
+
+                system("pause");
+
+                system("cls");
+
+            }
+
+            // LANZAMIENTOS.
+
+            sumaYRestablece(nroDeLanzamiento, ronda, puntajeMaximoDeLaRonda);
+
+
+
         }
-
-        // LANZAMIENTOS.
-
-        sumaYRestablece(nroDeLanzamiento, ronda, puntajeMaximoDeLaRonda);
-
-
-
     }
+    else
+    {
+        system("cls");
+        std::cout << "Bienvenido al modo un jugador." << std::endl;
+        std::cout << "Ingrese su nombre : ";
+        std::cin >> nombre;
+
+        system("cls");
+        /// sin eleccion de rondas
+        while(puntajeTotal < 100)
+        {
+
+
+            std::cout << "Turno de " << nombre << " | Ronda " << ronda << " | Puntaje total " << puntajeTotal << std::endl;
+            std::cout << "- - - - - - - - - - - - - - - - - - - - -" << std::endl;
+            std::cout << "Puntaje maximo de la ronda : " << puntajeMaximoDeLaRonda << " pts" << std::endl;
+            std::cout << "Lanzamiento nro : " << nroDeLanzamiento << std::endl;
+            std::cout << "- - - - - - - - - - - - - - - - - - - - -" << std::endl;
+
+            // TIENEN QUE APARECER LOS DADOS.
+
+            system("pause");
+
+            int vectorDados[6];
+
+            asignacion(vectorDados, activar); // ASIGNACION DE EL NUMERO DE DADO AL VECTOR.
+
+            muestraDados(vectorDados); // MUESTRA DADOS.
+
+            // CALCULAR PUNTAJE DE LANZAMIENTO.
+
+            puntajeDeLanzamiento = 0 ;
+
+            burbujeOrdena(vectorDados); // BURBUJEO, PARA ORDENAR LA ESCALERA.
+
+            /// CALCULA COMBINACIONES.
+            int escalera = 0;
+            int sexteto = 0;
+
+            validarEscalera(vectorDados, escalera);
+            validarSexteto(vectorDados, sexteto);
+
+            asignacionPuntajes(escalera, puntajeDeLanzamiento, nroDeLanzamiento, sexteto, vectorDados, puntajeTotal);
+
+
+            std::cout << " " << std::endl;
+            std::cout << "Puntos obtenidos en este lanzamiento = " << puntajeDeLanzamiento << std::endl;
+            std::cout << " " << std::endl;
+
+            system("pause");
+            system("cls");
+
+            // CALCULAR PUNTAJE MAXIMO DE LA RONDA.
+
+            calculaPuntajeMaximoDeLaRonda(puntajeDeLanzamiento, puntajeMaximoDeLaRonda);
+
+            nroDeLanzamiento++;
+
+            calculaPuntajeTotal(nroDeLanzamiento,puntajeTotal, puntajeMaximoDeLaRonda);
+
+            if(nroDeLanzamiento == 4)
+            {
+                system("cls");
+
+                std::cout << "Ronda " << ronda <<std::endl;
+                std::cout << "Turno de " << nombre << std::endl;
+                std::cout << "Puntaje : " << puntajeTotal << std::endl;
+
+                system("pause");
+
+                system("cls");
+
+            }
+
+            // LANZAMIENTOS.
+
+            sumaYRestablece(nroDeLanzamiento, ronda, puntajeMaximoDeLaRonda);
+
+
+
+        }
+    }
+
+
+
+
 
     std::cout <<nombre << " haz finalizado !" << std::endl;
     std::cout << "Puntaje obtenido : " << puntajeTotal << " | En " << ronda-1 << " rondas." << std::endl;

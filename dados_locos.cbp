@@ -32,7 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ModoUnJugadorSimulado.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
@@ -40,11 +39,8 @@
 		<Unit filename="mayoresPuntuaciones.h" />
 		<Unit filename="modoMultijugador.cpp" />
 		<Unit filename="modoMultijugador.h" />
-		<Unit filename="modoMultijugadorSimulado.cpp" />
-		<Unit filename="modoMultijugadorSimulado.h" />
 		<Unit filename="modoUnJugador.cpp" />
 		<Unit filename="modoUnJugador.h" />
-		<Unit filename="modoUnJugadorSimulado.cpp" />
 		<Unit filename="rlutil.h" />
 		<Unit filename="simulado.cpp" />
 		<Unit filename="simulado.h" />
